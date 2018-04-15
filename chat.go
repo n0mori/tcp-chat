@@ -15,7 +15,7 @@ func sender(conn *net.TCPConn, name string) {
 		if err == io.EOF {
 			break
 		}
-		fmt.Fprintf(conn, "\a%s: %s", name, str)
+		fmt.Fprintf(conn, "%s: %s", name, str)
 	}
 }
 
@@ -30,10 +30,6 @@ func reader(conn *net.TCPConn) {
 		}
 		fmt.Print(str)
 	}
-}
-
-func printer(msg string) {
-
 }
 
 func main() {
